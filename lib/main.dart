@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:yaho_test/core/config/app_config.dart';
 import 'package:yaho_test/injector.dart';
-import 'package:yaho_test/modules/home_page/home_page.dart';
+import 'package:yaho_test/modules/ui/home_page/home_page.dart';
 
 void main() {
   configureDependencies();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yaho_test/core/config/app_config.dart';
 import 'package:yaho_test/core/ui/base_view_state.dart';
 import 'package:yaho_test/injector.dart';
-import 'package:yaho_test/modules/home_page/home_page_model.dart';
+import 'package:yaho_test/modules/ui/home_page/home_page_model.dart';
 import 'package:yaho_test/themes/themes_app.dart';
 
 class HomePage extends StatefulWidget {
