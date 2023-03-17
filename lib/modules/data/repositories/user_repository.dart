@@ -8,5 +8,5 @@ class UserRepository {
 
   UserRepository(this._remoteDatasource);
 
-  Future<List<BaseData>> getUsers(int page) => _remoteDatasource.getUsers(page);
+  Future<BaseData> getUsers(int page) => _remoteDatasource.getUsers(page);
 }

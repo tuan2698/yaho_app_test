@@ -15,5 +15,5 @@ abstract class Service {
   factory Service() => _Service(getIt<HttpClientWrapper>().dio);
 
   @GET("users")
-  Future<List<BaseData>> getUsers(@Query('page') int page);
+  Future<BaseData> getUsers(@Query('page') int page);
 }

@@ -20,6 +20,12 @@ void configureDependencies() => getIt.init();
 @module
 abstract class RegisterModule {
   @lazySingleton
+  Logger getLogger() => Logger(
+    level: AppConfig.LOG_LEVEL,
+    printer: SimplePrinter(),
+  );
+
+  @lazySingleton
   @preResolve
   Future<SharedPreferences> getSharePreferences() async => SharedPreferences.getInstance();
 

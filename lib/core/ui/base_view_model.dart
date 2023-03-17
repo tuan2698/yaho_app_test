@@ -26,6 +26,7 @@ abstract class BaseViewModel {
         await result;
       }
     } catch (error) {
+      print("error: $error");
       success = false;
       final result = await onFailure!(error);
       if (result is Future) {
