@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yaho_test/core/ui/base_view_state.dart';
 import 'package:yaho_test/injector.dart';
 import 'package:yaho_test/modules/reusable/pull_to_refresh_load_more.dart';
-import 'package:yaho_test/modules/ui/home/bloc/home_bloc.dart';
+import 'package:yaho_test/modules/ui/home/bloc/home_boc/home_bloc.dart';
+import 'package:yaho_test/modules/ui/home/bloc/users_bloc/users_bloc.dart';
 import 'package:yaho_test/modules/ui/home/home_page_model.dart';
 import 'package:yaho_test/modules/ui/home/widget/list_item.dart';
 
@@ -43,16 +44,28 @@ class _HomePageState extends BaseViewState<HomePage, HomePageModel> {
     );
   }
 
-  Widget _buildContent() => PullToRefreshNLoadMore(
+  Widget _buildContent() => BlocConsumer<UsersBloc, UsersState>(
+    bloc: viewModel.usersBloc,
+    listener: (context, state) {
+    },
+    buildWhen: (context, state) {
+      return true;
+    },
+    builder: (context, state) {
+
+      return PullToRefreshNLoadMore(
         refreshController: viewModel.refreshController,
         onLoadMore: () => viewModel.onLoadMore(),
         onRefresh: () => viewModel.initUserData(),
-        child: ListView.builder(
-          itemCount: viewModel.users.length,
+        child:ListView.builder(
+          // physics: const NeverScrollableScrollPhysics(),
+          itemCount: state.users.length,
           shrinkWrap: true,
-          itemBuilder: (context, index) => ListItem(user: viewModel.users[index]),
-        ),
+          itemBuilder: (context, index) => ListItem(user: state.users[index]),
+        ) ,
       );
+    },
+  );
 
   Widget _buildLoading() => Container(
         child: Text("loading"),
