@@ -1,0 +1,16 @@
+{
+  "detail": {
+    "title": "Information",
+    "name": " NAME",
+    "address": "ADDRESS",
+    "phone": "PHONE",
+    "mail": "MAIL",
+    "sex": "Sex",
+    "male": "Male",
+    "female": "Female",
+    "mode": "Mode",
+    "dark": "Dark",
+    "light": "Light",
+    "language": "Language"
+  }
+}

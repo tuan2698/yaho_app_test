@@ -34,7 +34,7 @@ class PullToRefreshNLoadMore extends StatelessWidget {
       controller: refreshController,
       enablePullDown: onRefresh != null,
       enablePullUp: onLoadMore != null,
-      header: headerLoading ?? WaterDropMaterialHeader(backgroundColor: colorLoading),
+      header: headerLoading ?? WaterDropMaterialHeader(backgroundColor: colorLoading ?? Colors.red[200]),
       onRefresh: onRefresh,
       onLoading: onLoadMore,
       child: child,

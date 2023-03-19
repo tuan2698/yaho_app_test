@@ -11,9 +11,24 @@ part 'users_bloc.freezed.dart';
 class UsersBloc extends Bloc<UsersEvent, UsersState> {
   UsersBloc() : super(const UsersState()) {
     on<LoadUsers>(_onLoadUsers);
+    on<LoadEvent>(_onLoadEvent);
+    on<SwitchToggleButton>(_onSwitchToggleButton);
+    on<LikeUserEvent>(_onLikeUser);
   }
 
   void _onLoadUsers(LoadUsers event,Emitter<UsersState> emit) {
     emit(state.copyWith(users: event.users));
+  }
+
+  void _onLoadEvent(LoadEvent event,Emitter<UsersState> emit) {
+    emit(state.copyWith(event: event.isLoading));
+  }
+
+  void _onSwitchToggleButton(SwitchToggleButton event,Emitter<UsersState> emit) {
+    emit(state.copyWith(togglesState: event.toggleState));
+  }
+
+  void _onLikeUser(LikeUserEvent event,Emitter<UsersState> emit) {
+    emit(state.copyWith(likeUserState: event.likeUserState));
   }
 }

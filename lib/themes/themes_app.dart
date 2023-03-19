@@ -25,7 +25,10 @@ class ThemesApp {
     brightness: Brightness.light,
     backgroundColor: Colors.white,
     cardColor: Colors.black,
+    primaryColor: ColorResource.color_primary_light,
+    scaffoldBackgroundColor: ColorResource.color_bg_home_light,
     bottomAppBarColor: Colors.transparent,
+    dividerColor: ColorResource.color_divider_light,
     textTheme: getTextTheme(ThemeMode.light),
     colorScheme: getColorScheme(ThemeMode.light),
     appBarTheme: AppBarTheme(
@@ -48,7 +51,10 @@ class ThemesApp {
     backgroundColor: Colors.black,
     colorScheme: getColorScheme(ThemeMode.dark),
     textTheme: getTextTheme(ThemeMode.dark),
+    primaryColor: ColorResource.color_primary_dark,
+    scaffoldBackgroundColor: ColorResource.color_bg_home_dark,
     bottomAppBarColor: Colors.transparent,
+    dividerColor: ColorResource.color_divider_dark,
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.black.withOpacity(0.8),
       shadowColor: Colors.grey.withOpacity(0.8),
@@ -267,7 +273,7 @@ class ColorSchemeApp extends ColorScheme {
   }) : super.light();
 }
 
-extension CcCcColorSchemeExtension on ColorScheme {
+extension ColorSchemeExtension on ColorScheme {
   ThemeMode get _themeMode => AppConfig.themeMode;
 
   Color get scaffoldBackground => ThemesApp.getColorScheme(_themeMode).scaffoldBackground;

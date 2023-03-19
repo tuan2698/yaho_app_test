@@ -1,0 +1,16 @@
+{
+  "detail": {
+    "title": "Thông Tin ",
+    "name": "TÊN",
+    "address": "ĐỊA CHỈ",
+    "phone": "SỐ ĐIỆN THOẠI",
+    "mail": "MAIL",
+    "sex": "Giới tính",
+    "male": "Nam",
+    "female": "Nữ",
+    "mode": "Giao diện",
+    "dark": "Tối",
+    "light": "Sáng",
+    "language": "Ngôn ngữ"
+  }
+}
