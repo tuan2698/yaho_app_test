@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:yaho_test/injector.dart';
 import 'package:yaho_test/modules/domain/models/user.dart';
 import 'package:yaho_test/modules/reusable/ui/image_custom.dart';
+import 'package:yaho_test/modules/reusable/utils/url_launcher_utils.dart';
 import 'package:yaho_test/modules/ui/home/bloc/users_bloc/users_bloc.dart';
 import 'package:yaho_test/themes/image_resource.dart';
 
@@ -45,9 +46,14 @@ class ListItem extends StatelessWidget {
         SizedBox(height: 5.h),
         Row(
           children: [
-            Image.asset(ImageResource.facebook, width: 30.w, height: 30.h),
+            GestureDetector(
+                onTap: () => UrlLauncherUtils.goToAnotherApp("https://www.facebook.com/"),
+                child: Image.asset(ImageResource.facebook, width: 30.w, height: 30.h)),
             SizedBox(width: 20.w),
-            Image.asset(ImageResource.gmail, width: 30.w, height: 30.h),
+
+            GestureDetector(
+                onTap: () => UrlLauncherUtils.goToAnotherApp("https://mail.google.com/mail/"),
+                child: Image.asset(ImageResource.gmail, width: 30.w, height: 30.h)),
           ],
         )
       ],

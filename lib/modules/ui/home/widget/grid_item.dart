@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:yaho_test/injector.dart';
 import 'package:yaho_test/modules/domain/models/user.dart';
 import 'package:yaho_test/modules/reusable/ui/image_custom.dart';
+import 'package:yaho_test/modules/reusable/utils/url_launcher_utils.dart';
 import 'package:yaho_test/modules/ui/home/bloc/users_bloc/users_bloc.dart';
 import 'package:yaho_test/themes/image_resource.dart';
 
@@ -72,8 +73,12 @@ class GridItem extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Image.asset(ImageResource.facebook, width: 30.w, height: 30.h),
-        Image.asset(ImageResource.gmail, width: 30.w, height: 30.h),
+        GestureDetector(
+            onTap: () => UrlLauncherUtils.goToAnotherApp("https://www.facebook.com/"),
+            child: Image.asset(ImageResource.facebook, width: 30.w, height: 30.h)),
+        GestureDetector(
+            onTap: () => UrlLauncherUtils.goToAnotherApp("https://mail.google.com/mail/"),
+            child: Image.asset(ImageResource.gmail, width: 30.w, height: 30.h)),
       ],
     );
   }
