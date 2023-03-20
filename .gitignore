@@ -1,6 +1,6 @@
 # Custom
-*.g.dart
-injector.config.dart
+#*.g.dart
+#injector.config.dart
 fonts.gen.dart
 assets.gen.dart
 
