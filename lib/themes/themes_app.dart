@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:yaho_test/core/config/app_config.dart';
+import 'package:yaho_test/config/app_config.dart';
 import 'package:yaho_test/themes/color_resource.dart';
 import 'package:yaho_test/themes/style_resource.dart';
 

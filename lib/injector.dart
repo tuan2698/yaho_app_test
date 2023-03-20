@@ -1,12 +1,11 @@
-import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:yaho_test/core/config/app_config.dart';
-import 'package:yaho_test/core/config/backend_config.dart';
+import 'package:yaho_test/config/app_config.dart';
+import 'package:yaho_test/config/backend_config.dart';
 import 'package:yaho_test/core/server/http_client_wrapper.dart';
 import 'package:yaho_test/core/server/http_error.dart';
 

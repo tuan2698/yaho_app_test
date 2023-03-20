@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:yaho_test/core/config/app_config.dart';
+import 'package:yaho_test/config/app_config.dart';
 import 'package:yaho_test/core/ui/routes.dart';
 import 'package:yaho_test/themes/themes_app.dart';
 

@@ -56,7 +56,7 @@ class HomeDrawer extends StatelessWidget {
                   ),
                   SizedBox(height: 5.h),
                   Text(
-                    "${LocaleKeys.detail_sex.tr()}: Male",
+                    "${LocaleKeys.detail_sex.tr()}: ${LocaleKeys.detail_man.tr()}",
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: 16.sp, color: Colors.white),
                   ),
                   SizedBox(height: 5.h),

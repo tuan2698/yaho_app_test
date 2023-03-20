@@ -18,6 +18,8 @@ class ImageResource {
   static String gmail = getPngSourcePath('gmail');
   static String uk = getPngSourcePath('uk');
   static String vietnam = getPngSourcePath('vietnam');
+  static String empty = getPngSourcePath('empty');
+  static String error = getPngSourcePath('error');
 
   ///json
 

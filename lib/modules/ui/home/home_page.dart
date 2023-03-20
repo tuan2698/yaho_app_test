@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:yaho_test/core/ui/base_view_state.dart';
 import 'package:yaho_test/injector.dart';
 import 'package:yaho_test/modules/reusable/ui/pull_to_refresh_load_more.dart';
@@ -9,6 +10,7 @@ import 'package:yaho_test/modules/ui/home/home_page_model.dart';
 import 'package:yaho_test/modules/ui/home/widget/grid_item.dart';
 import 'package:yaho_test/modules/ui/home/widget/home_drawer.dart';
 import 'package:yaho_test/modules/ui/home/widget/list_item.dart';
+import 'package:yaho_test/themes/image_resource.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -91,9 +93,43 @@ class _HomePageState extends BaseViewState<HomePage, HomePageModel> {
 
   Widget _buildLoading() => Container();
 
-  Widget _buildFailed() => Container();
+  Widget _buildFailed() => Center(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(
+          ImageResource.error,
+          width: 60,
+          height: 60,
+          fit: BoxFit.scaleDown,
+        ),
+        SizedBox(height: 10.h),
+        Text(
+          "Lỗi xin vui lòng thử lại!",
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: 20),
+        ),
+      ],
+    ),
+  );
 
-  Widget _buildEmpty() => Container();
+  Widget _buildEmpty() => Center(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(
+          ImageResource.empty,
+          width: 60,
+          height: 60,
+          fit: BoxFit.scaleDown,
+        ),
+        SizedBox(height: 10.h),
+        Text(
+          "Chưa có dữ liệu",
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: 20),
+        ),
+      ],
+    ),
+  );
 
   @override
   createViewModel() => getIt<HomePageModel>();
